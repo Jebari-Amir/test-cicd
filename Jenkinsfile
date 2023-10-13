@@ -61,7 +61,7 @@ pipeline{
 stage('Build Docker Image') {
                       steps {
                           script {
-                            sh 'docker build -t amirovvv/spring-app:first .'
+                            sh 'docker build -t amirovvv/spring-app:second .'
                           }
                       }
                   }
@@ -75,7 +75,7 @@ stage('Build Docker Image') {
 	    
 	                      stage('Push Docker Image') {
                                         steps {
-                                   sh 'docker push amirovvv/spring-app:first'
+                                   sh 'docker push amirovvv/spring-app:second'
                                             }
 		  }
 
