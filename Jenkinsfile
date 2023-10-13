@@ -10,7 +10,7 @@ pipeline{
             steps{
       			checkout([$class: 'GitSCM', branches: [[name: '*/main']],
 			extensions: [],
-			userRemoteConfigs: [[url: 'https://github.com/hadhemi12345/test-cicd.git']]])
+			userRemoteConfigs: [[url: 'https://github.com/Jebari-Amir/test-cicd.git']]])
             }
         }
 
@@ -42,7 +42,7 @@ pipeline{
         stage('Code Quality Check via SonarQube') {
             steps{
 
-             		sh "  mvn clean verify sonar:sonar -Dsonar.projectKey=cicd -Dsonar.projectName='cicd' -Dsonar.host.url=http://192.168.33.10:9000 -Dsonar.token=sqp_e5f5f91cead786d70d9a58c4e69e09a650330bee "
+             		sh "  mvn clean verify sonar:sonar -Dsonar.projectKey=cicd -Dsonar.projectName='cicd' -Dsonar.host.url=http://172.10.0.140:9000 -Dsonar.token=sqp_2d9c32825b84fd25555d9230e8b94561bfb89119 "
 
             }
         }
